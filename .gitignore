@@ -32,7 +32,6 @@ lerna-debug.log*
 firebase-debug.log
 firestore-debug.log
 ui-debug.log
-.firebaserc
 
 # Build outputs
 build/
