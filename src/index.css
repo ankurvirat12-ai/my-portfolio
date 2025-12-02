@@ -1,0 +1,110 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to bottom right, #020617, #0f172a, #020617);
+  color: white;
+  scroll-behavior: smooth;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Glass effect utilities */
+.glass {
+  backdrop-filter: blur(16px);
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+}
+
+.glass-card {
+  backdrop-filter: blur(16px);
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s;
+}
+
+.glass-card:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(to right, #4F46E5, #06B6D4, #10B981);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Buttons */
+.btn-primary {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(to right, #4338CA, #0891B2);
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: transform 0.3s;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-outline {
+  padding: 0.75rem 2rem;
+  border: 2px solid #4F46E5;
+  border-radius: 9999px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background-color: rgba(79, 70, 229, 0.2);
+}
+
+/* Section container */
+.section-container {
+  max-width: 80rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+/* Text shadow */
+.text-shadow {
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Gradient animation */
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+}
