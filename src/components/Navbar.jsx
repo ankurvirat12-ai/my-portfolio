@@ -59,10 +59,14 @@ const Navbar = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ delay: 0.2 }}
-                        className="text-2xl font-display font-bold gradient-text cursor-pointer"
+                        className="cursor-pointer"
                         onClick={() => scrollToSection('#home')}
                     >
-                        AM
+                        <img
+                            src="/profile.jpg"
+                            alt="Ankur Mondal"
+                            className="w-12 h-12 rounded-full object-cover ring-2 ring-primary-400/50 hover:ring-primary-400 transition-all duration-300"
+                        />
                     </motion.div>
 
                     {/* Desktop Navigation */}
