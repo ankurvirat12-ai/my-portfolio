@@ -28,7 +28,7 @@ const Footer = () => {
                         transition={{ delay: 0.2 }}
                         className="flex gap-6 text-sm"
                     >
-                        {['About', 'Education', 'Skills', 'Experience', 'Contact'].map((link) => (
+                        {['About', 'Education', 'Skills ', 'Experience', 'Contact'].map((link) => (
                             <a
                                 key={link}
                                 href={`#${link.toLowerCase()}`}
