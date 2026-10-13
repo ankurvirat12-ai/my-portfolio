@@ -2,7 +2,7 @@ import { motion, useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import {
     FaPills, FaFlask, FaMicroscope, FaUserMd,
-    FaLaptopCode, FaChartLine, FaLanguage, FaUsers
+    FaHospital, FaBoxes, FaChartLine, FaLanguage, FaUsers, FaCheckDouble
 } from 'react-icons/fa';
 
 const Skills = () => {
@@ -15,56 +15,56 @@ const Skills = () => {
             icon: FaPills,
             color: 'from-primary-500 to-primary-700',
             skills: [
-                { name: 'Pharmaceutical Chemistry', level: 70 },
-                { name: 'Pharmaceutics', level: 72 },
+                { name: 'Pharmaceutical Chemistry', level: 75 },
+                { name: 'Pharmaceutics & Formulations', level: 78 },
                 { name: 'Pharmacognosy', level: 75 },
-                { name: 'Anatomy & Physiology', level: 68 },
+                { name: 'Human Anatomy & Physiology', level: 72 },
             ],
         },
         {
-            title: 'Laboratory Skills',
+            title: 'Hospital Pharmacy & Supply Chain',
+            icon: FaHospital,
+            color: 'from-cyan-500 to-teal-600',
+            skills: [
+                { name: 'Hospital Drug Procurement', level: 82 },
+                { name: 'Pharmaceutical Inventory Control', level: 85 },
+                { name: 'Cold-Chain Storage Management', level: 80 },
+                { name: 'Healthcare Quality Compliance', level: 78 },
+            ],
+        },
+        {
+            title: 'Laboratory & Practical Skills',
             icon: FaFlask,
             color: 'from-secondary-400 to-secondary-600',
             skills: [
-                { name: 'Basic Lab Techniques', level: 65 },
-                { name: 'Pharmaceutical Preparation', level: 60 },
-                { name: 'Microscopy', level: 70 },
-                { name: 'Titration Methods', level: 72 },
+                { name: 'Pharmaceutical Preparation', level: 70 },
+                { name: 'Titration & Chemical Assay', level: 74 },
+                { name: 'Microscopy & Identification', level: 72 },
+                { name: 'Laboratory Safety & GLP', level: 80 },
             ],
         },
         {
-            title: 'Academic & Learning',
+            title: 'Clinical & Academic Competencies',
             icon: FaUserMd,
             color: 'from-accent-500 to-accent-700',
             skills: [
-                { name: 'Medical Terminology', level: 75 },
-                { name: 'Drug Classification', level: 70 },
-                { name: 'Biochemistry Concepts', level: 68 },
-                { name: 'Microbiology Basics', level: 65 },
-            ],
-        },
-        {
-            title: 'Technical Skills',
-            icon: FaLaptopCode,
-            color: 'from-purple-500 to-purple-700',
-            skills: [
-                { name: 'MS Office Suite', level: 80 },
-                { name: 'Online Research', level: 75 },
-                { name: 'Report Writing', level: 70 },
-                { name: 'Presentation Skills', level: 72 },
+                { name: 'Medical Terminology & Dosage', level: 78 },
+                { name: 'Drug Classification & Pharmacology', level: 75 },
+                { name: 'Biochemistry Concepts', level: 70 },
+                { name: 'Research & Documentation', level: 76 },
             ],
         },
     ];
 
     const softSkills = [
-        { name: 'Communication', icon: FaLanguage },
-        { name: 'Team Collaboration', icon: FaUsers },
-        { name: 'Research & Analysis', icon: FaMicroscope },
-        { name: 'Problem Solving', icon: FaChartLine },
+        { name: 'Clinical Communication', icon: FaLanguage },
+        { name: 'Healthcare Teamwork', icon: FaUsers },
+        { name: 'Inventory Accuracy', icon: FaBoxes },
+        { name: 'Critical Problem Solving', icon: FaChartLine },
     ];
 
     return (
-        <section id="skills" className="section-container" ref={ref}>
+        <section id="skills" className="section-container relative" ref={ref}>
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -72,6 +72,14 @@ const Skills = () => {
             >
                 {/* Section Header */}
                 <div className="text-center mb-16">
+                    <motion.div
+                        initial={{ opacity: 0, y: -10 }}
+                        animate={isInView ? { opacity: 1, y: 0 } : {}}
+                        transition={{ duration: 0.5 }}
+                        className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-semibold uppercase tracking-wider mb-4"
+                    >
+                        Competencies
+                    </motion.div>
                     <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -86,6 +94,9 @@ const Skills = () => {
                         transition={{ duration: 0.8, delay: 0.4 }}
                         className="h-1 bg-gradient-to-r from-primary-500 to-secondary-400 mx-auto rounded-full"
                     />
+                    <p className="text-gray-400 text-sm md:text-base max-w-xl mx-auto mt-4">
+                        Integrating pharmaceutical coursework with hospital supply chain logistics and practical laboratory techniques.
+                    </p>
                 </div>
 
                 {/* Skill Categories Grid */}
@@ -95,13 +106,13 @@ const Skills = () => {
                             key={category.title}
                             initial={{ opacity: 0, y: 30 }}
                             animate={isInView ? { opacity: 1, y: 0 } : {}}
-                            transition={{ duration: 0.6, delay: 0.5 + catIndex * 0.1 }}
-                            className="glass-card"
+                            transition={{ duration: 0.6, delay: 0.3 + catIndex * 0.1 }}
+                            className="glass-card hover:border-cyan-500/30 transition-all"
                         >
                             {/* Category Header */}
                             <div className="flex items-center gap-4 mb-6">
-                                <div className={`p-3 rounded-xl bg-gradient-to-br ${category.color}`}>
-                                    <category.icon className="text-2xl text-white" />
+                                <div className={`p-3 rounded-xl bg-gradient-to-br ${category.color} shadow-lg text-white`}>
+                                    <category.icon className="text-2xl" />
                                 </div>
                                 <h3 className="text-xl font-display font-semibold text-white">
                                     {category.title}
@@ -115,7 +126,7 @@ const Skills = () => {
                                         key={skill.name}
                                         skill={skill}
                                         isInView={isInView}
-                                        delay={0.7 + catIndex * 0.1 + skillIndex * 0.05}
+                                        delay={0.5 + catIndex * 0.1 + skillIndex * 0.05}
                                         color={category.color}
                                     />
                                 ))}
@@ -124,14 +135,14 @@ const Skills = () => {
                     ))}
                 </div>
 
-                {/* Soft Skills */}
+                {/* Core Competencies */}
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
-                    transition={{ duration: 0.8, delay: 1 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
                 >
                     <h3 className="text-2xl font-display font-semibold text-white mb-8 text-center">
-                        Core Competencies
+                        Professional Strengths
                     </h3>
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                         {softSkills.map((skill, index) => (
@@ -139,14 +150,16 @@ const Skills = () => {
                                 key={skill.name}
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                                transition={{ duration: 0.5, delay: 1.2 + index * 0.1 }}
-                                whileHover={{ scale: 1.05, y: -10 }}
-                                className="glass-card text-center group cursor-default"
+                                transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
+                                whileHover={{ scale: 1.05, y: -6 }}
+                                className="glass-card text-center group cursor-default border-slate-800 hover:border-cyan-500/40"
                             >
-                                <div className="inline-flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-br from-primary-500 to-secondary-400 mb-4 group-hover:scale-110 transition-transform duration-300">
+                                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br from-primary-500 to-secondary-400 mb-4 group-hover:scale-110 transition-transform duration-300 shadow-md">
                                     <skill.icon className="text-xl text-white" />
                                 </div>
-                                <p className="font-semibold text-white">{skill.name}</p>
+                                <p className="font-semibold text-white group-hover:text-cyan-300 transition-colors text-sm md:text-base">
+                                    {skill.name}
+                                </p>
                             </motion.div>
                         ))}
                     </div>
@@ -172,10 +185,10 @@ const SkillBar = ({ skill, isInView, delay, color }) => {
     return (
         <div>
             <div className="flex justify-between mb-2">
-                <span className="text-gray-300 font-medium">{skill.name}</span>
-                <span className="text-gray-400 text-sm">{skill.level}%</span>
+                <span className="text-gray-300 font-medium text-sm">{skill.name}</span>
+                <span className="text-cyan-300 text-xs font-semibold">{skill.level}%</span>
             </div>
-            <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+            <div className="h-2 bg-slate-800/80 rounded-full overflow-hidden border border-slate-700/50">
                 <motion.div
                     initial={{ width: 0 }}
                     animate={{ width: `${width}%` }}

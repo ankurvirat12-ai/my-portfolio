@@ -10,7 +10,7 @@ const Education = () => {
         degree: 'Bachelor of Pharmacy (B. Pharm.)',
         university: 'Amity University Kolkata',
         location: 'Kolkata, West Bengal',
-        duration: '2024 - 2028 (Currently in 2nd Year)',
+        duration: '2024 - 2028 (Currently in 3rd Year)',
         gpa: '8.2 / 10.0',
         achievements: [
             'Pursuing Pharmacy with Strong Foundation',

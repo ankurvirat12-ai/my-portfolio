@@ -28,11 +28,11 @@ const Footer = () => {
                         transition={{ delay: 0.2 }}
                         className="flex gap-6 text-sm"
                     >
-                        {['About', 'Education', 'Skills ', 'Experience', 'Contact'].map((link) => (
+                        {['About', 'Education', 'Skills', 'Experience', 'Contact'].map((link) => (
                             <a
                                 key={link}
                                 href={`#${link.toLowerCase()}`}
-                                className="text-gray-400 hover:text-primary-400 transition-colors"
+                                className="text-gray-400 hover:text-cyan-400 transition-colors"
                             >
                                 {link}
                             </a>
