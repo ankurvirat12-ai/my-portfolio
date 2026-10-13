@@ -3,15 +3,15 @@ import {
     FaEnvelope,
     FaInstagram,
     FaFacebook,
+    FaLinkedin,
     FaFileAlt,
-    FaHospital,
     FaAward,
     FaDownload,
-    FaExternalLinkAlt
+    FaAddressCard
 } from 'react-icons/fa';
 import { useEffect, useState } from 'react';
 
-const Hero = ({ onOpenCertificate }) => {
+const Hero = ({ onOpenCertificate, onOpenResume }) => {
     const [displayText, setDisplayText] = useState('');
     const fullText = 'B. Pharm. Student | Future Pharmacist';
 
@@ -108,8 +108,7 @@ const Hero = ({ onOpenCertificate }) => {
                         transition={{ duration: 0.8, delay: 0.6 }}
                         className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed"
                     >
-                        3rd-year B. Pharm. student at Amity University Kolkata with hospital training in pharmaceutical
-                        supply chain and clinical operations at Manipal Hospitals. Building a strong foundation to become a skilled healthcare professional.
+                        3rd-year B. Pharm. student at Amity University Kolkata with clinical hospital pharmacy training in supply chain & drug logistics at Manipal Hospitals. Building a strong foundation to become a skilled healthcare professional.
                     </motion.p>
 
                     {/* CTA Buttons */}
@@ -131,14 +130,13 @@ const Hero = ({ onOpenCertificate }) => {
                             <span>View Internship Doc</span>
                         </button>
 
-                        <a
-                            href="/internship-certificate.pdf"
-                            download="Ankur_Mondal_Internship_Certificate.pdf"
+                        <button
+                            onClick={onOpenResume}
                             className="btn-outline w-full sm:w-auto text-sm"
                         >
-                            <FaDownload className="text-xs" />
-                            <span>Download PDF</span>
-                        </a>
+                            <FaAddressCard className="text-sm text-cyan-400" />
+                            <span>Curriculum Vitae (CV)</span>
+                        </button>
                     </motion.div>
 
                     {/* Social Links */}
@@ -146,9 +144,10 @@ const Hero = ({ onOpenCertificate }) => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         transition={{ duration: 0.8, delay: 1 }}
-                        className="flex items-center justify-center gap-7 pt-6"
+                        className="flex items-center justify-center gap-6 pt-6"
                     >
                         {[
+                            { icon: FaLinkedin, href: 'https://www.linkedin.com/in/ankur-mondal-pharmacy', label: 'LinkedIn' },
                             { icon: FaInstagram, href: 'https://www.instagram.com/iamankurofiicial_06', label: 'Instagram' },
                             { icon: FaFacebook, href: 'https://www.facebook.com/ankur.mondal.3990418', label: 'Facebook' },
                             { icon: FaEnvelope, href: 'mailto:ankur.virat12@gmail.com', label: 'Email' },

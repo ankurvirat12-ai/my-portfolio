@@ -5,12 +5,17 @@ import About from './components/About';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
+import Projects from './components/Projects';
+import Certifications from './components/Certifications';
+import DosageCalculator from './components/DosageCalculator';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CertificateModal from './components/CertificateModal';
+import ResumeModal from './components/ResumeModal';
 
 function App() {
   const [isCertModalOpen, setIsCertModalOpen] = useState(false);
+  const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
 
   return (
     <div className="relative min-h-screen bg-[#020617] text-slate-100 selection:bg-cyan-500/30 selection:text-cyan-200">
@@ -21,15 +26,24 @@ function App() {
       </div>
 
       {/* Navigation */}
-      <Navbar onOpenCertificate={() => setIsCertModalOpen(true)} />
+      <Navbar
+        onOpenCertificate={() => setIsCertModalOpen(true)}
+        onOpenResume={() => setIsResumeModalOpen(true)}
+      />
 
       {/* Main Content */}
       <main>
-        <Hero onOpenCertificate={() => setIsCertModalOpen(true)} />
+        <Hero
+          onOpenCertificate={() => setIsCertModalOpen(true)}
+          onOpenResume={() => setIsResumeModalOpen(true)}
+        />
         <About onOpenCertificate={() => setIsCertModalOpen(true)} />
         <Education />
         <Skills />
         <Experience onOpenCertificate={() => setIsCertModalOpen(true)} />
+        <Projects onOpenCertificate={() => setIsCertModalOpen(true)} />
+        <Certifications onOpenCertificate={() => setIsCertModalOpen(true)} />
+        <DosageCalculator />
         <Contact />
       </main>
 
@@ -40,6 +54,16 @@ function App() {
       <CertificateModal
         isOpen={isCertModalOpen}
         onClose={() => setIsCertModalOpen(false)}
+      />
+
+      {/* Curriculum Vitae (CV) Modal */}
+      <ResumeModal
+        isOpen={isResumeModalOpen}
+        onClose={() => setIsResumeModalOpen(false)}
+        onOpenCertificate={() => {
+          setIsResumeModalOpen(false);
+          setIsCertModalOpen(true);
+        }}
       />
     </div>
   );

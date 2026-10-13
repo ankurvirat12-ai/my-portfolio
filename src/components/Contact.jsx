@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaInstagram, FaFacebook, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
+import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaInstagram, FaFacebook, FaLinkedin, FaPaperPlane, FaWhatsapp } from 'react-icons/fa';
 
 const Contact = () => {
     const ref = useRef(null);
@@ -61,6 +61,7 @@ const Contact = () => {
     ];
 
     const socialLinks = [
+        { icon: FaLinkedin, label: 'LinkedIn', link: 'https://www.linkedin.com/in/ankur-mondal-pharmacy', color: 'hover:text-cyan-400' },
         { icon: FaInstagram, label: 'Instagram', link: 'https://www.instagram.com/iamankurofiicial_06', color: 'hover:text-pink-400' },
         { icon: FaFacebook, label: 'Facebook', link: 'https://www.facebook.com/ankur.mondal.3990418', color: 'hover:text-blue-500' },
     ];
